@@ -1,43 +1,14 @@
-# Near Prometheus Exporter
+# Near Exporter
+
+Prometheus exporter for Near Protocol nodes. Forked from [masknetgoal634](https://github.com/masknetgoal634/near-prometheus-exporter).
 
 This service exports various metrics from Near node for consumption by [Prometheus](https://prometheus.io). It uses [JSON-RPC](https://docs.near.org/docs/interaction/rpc) interface to collect the metrics. Inspired by [Ethereum Prometheus Exporter](https://github.com/31z4/ethereum-prometheus-exporter)
 
-## Install Docker
-```
-sudo apt-get update
-sudo apt install docker.io
-```
+### Build
+
+`./build.sh`
 
 ## Usage
-
-You can deploy using the [masknetgoal634/near-prometheus-exporter](https://hub.docker.com/r/masknetgoal634/near-prometheus-exporter) Docker image.
-
-```
-sudo docker run -dit \
-    --restart always \
-    --name near-exporter \
-    --network=host \
-    -p 9333:9333 \
-    masknetgoal634/near-prometheus-exporter:latest /dist/main -accountId <YOUR_POOL_ID>
-```
-
-
-### Build own image
-
-    git clone https://github.com/masknetgoal634/near-prometheus-exporter
-
-    cd near-prometheus-exporter
-
-    sudo docker build -t near-prometheus-exporter .
-
-```
-sudo docker run -dit \
-    --restart always \
-    --name near-exporter \
-    --network=host \
-    -p 9333:9333 \
-    near-prometheus-exporter:latest /dist/main -accountId <YOUR_POOL_ID>
-```
 
 By default the exporter serves on `:9333` at `/metrics`.
 

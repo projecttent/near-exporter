@@ -1,7 +1,7 @@
 package collector
 
 import (
-	nearapi "github.com/masknetgoal634/near-exporter/client"
+	nearapi "github.com/projecttent/near-exporter/client"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
